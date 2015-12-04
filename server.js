@@ -1,5 +1,7 @@
+
+var port = Number(process.env.PORT||8080);
 var mongo = require('mongodb').MongoClient,
-	client=require('socket.io').listen(8080).sockets;
+	client=require('socket.io').listen(port).sockets;
 	
 	mongo.connect('mongodb://127.0.0.1/chat',function(err,db){
 	if(err) throw err;
